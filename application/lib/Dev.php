@@ -9,3 +9,9 @@ function debug($str) {
 	echo '</pre>';
 	exit;
 }
+
+function shoow($str) {
+    echo '<pre>';
+    var_dump($str);
+    echo '</pre>';
+}

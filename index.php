@@ -10,6 +10,8 @@ spl_autoload_register(function  ($class) {
         require $path;
     }
 });
-
+session_start();
 $router = new Router;
-$router = new Db;
+$router->run();
+
+$db = new Db;
