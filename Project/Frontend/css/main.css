@@ -443,9 +443,6 @@ a:hover img {
   .menu__trigger {
     display: block;
   }
-  .social__icons .social__icons--link:first-child {
-    margin-left: 0;
-  }
   .social__icons .social__icons--link {
     height: 36px;
     width: 36px;
@@ -1744,11 +1741,6 @@ iframe {
 img {
   -ms-interpolation-mode: bicubic;
 }
-.col--8--last {
-  width: 66.1016949153%;
-  float: right;
-  margin-right: 0;
-}
 .container {
   position: relative;
   max-width: 1084px;
@@ -1936,9 +1928,7 @@ blockquote:after {
   margin-bottom: 0;
 }
 .article {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+
+  /*display: flex;*/
   overflow: hidden;
 }

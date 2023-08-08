@@ -27,7 +27,6 @@ class Router
         foreach ($this->routes as $route => $params) {
             if (preg_match($route, $url, $matches)) {
                 $this->params = $params;
-                var_dump($matches);
                 return true;
             }
 
@@ -38,21 +37,18 @@ class Router
     public function run()
     {
         if($this->match()) {
-            shoow($this->params['controller']);
-            shoow($this->params['action']);
-            $path = 'application\controllers\\'.ucfirst($this->params['controller']).'Controller.php';
-            shoow($path);
+            $path = 'application\controllers\\'.ucfirst($this->params['controller']).'Controller';
+
             if(class_exists($path)) {
-                shoow('Class'.$path.'exists');
                 $action = $this->params['action'].'Action';
                 if(method_exists($path, $action)) {
-                    $controller = new $path;
+                    $controller = new $path($this->params);
                     $controller->$action();
                 } else {
-                    shoow("Action not found");
+                    shoow("Action NOT found");
                 }
             } else {
-                echo 'Class'.$path.'DOES NOT exists';
+                shoow('Class '.$path.' DOES NOT exists');
             }
         } else {
             shoow("Page not found");
