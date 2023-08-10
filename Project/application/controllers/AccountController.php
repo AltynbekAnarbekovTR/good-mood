@@ -6,13 +6,19 @@ use application\core\Controller;
 
 class AccountController extends Controller
 {
+    public function before () {
+        $this->view->layout = "custom";
+    }
+
     public function loginAction()
     {
-        shoow("Login");
+        // shoow("Login");
+        $this->view->render("Вход");
     }
 
     public function registerAction()
     {
-        echo "Register";
+
+        $this->view->render("Регистрация");
     }
 }
