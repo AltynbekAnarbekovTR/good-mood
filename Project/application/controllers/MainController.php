@@ -8,10 +8,8 @@ class MainController extends Controller
 {
     public function indexAction()
     {
-        $vars = ['name' => 'Vasya',
-        'age' => 25];
-        shoow("Index");
-        $this->view->render('Someting', $vars);
+        $this->view->redirect('https://google.com');
+        $this->view->render('Someting');
     }
 
 }
