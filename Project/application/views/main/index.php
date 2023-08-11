@@ -1,3 +1,7 @@
 <p>Main page</p>
-<p><?php echo $name; ?><p>
-<p><?php echo $age; ?><p>
+
+<?php foreach ($news as $val): ?>
+    <h3><?php echo $val['title']; ?></h3>
+    <p><?php echo $val['description']; ?></p>
+    <hr>
+<?php endforeach; ?>

@@ -14,4 +14,4 @@ session_start();
 $router = new Router;
 $router->run();
 
-$db = new Db;
+//$db = new Db;
