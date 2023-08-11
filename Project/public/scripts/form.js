@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	console.log("redy");
 	$('form').submit(function(event) {
 		var json;
 		event.preventDefault();
@@ -10,6 +11,7 @@ $(document).ready(function() {
 			cache: false,
 			processData: false,
 			success: function(result) {
+				console.log(result);
 				json = jQuery.parseJSON(result);
 				if (json.url) {
 					window.location.href = json.url;

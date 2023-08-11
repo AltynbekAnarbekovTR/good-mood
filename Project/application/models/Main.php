@@ -11,7 +11,6 @@ class Main extends Model {
 //    }
 
     public function getNews() {
-        shoow($this->db);
         $result = $this->db->row('SELECT title, description FROM news');
         return $result;
     }

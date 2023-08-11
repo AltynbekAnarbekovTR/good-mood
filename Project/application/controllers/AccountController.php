@@ -12,7 +12,9 @@ class AccountController extends Controller
 
     public function loginAction()
     {
-        // shoow("Login");
+        if(!empty($POST)) {
+            exit(json_encode(['status' => 'success', 'message' => 123]));
+        }
         $this->view->render("Вход");
     }
 
