@@ -9,19 +9,17 @@ class MainController extends Controller
 {
     public function indexAction()
     {
-
-//        $params = [
-//            'id' => 2,
-//        ];
-//
-//        $data = $db->column('SELECT name FROM users WHERE id = :id', $params);
-//        shoow($data);
+        //        $params = [
+        //            'id' => 2,
+        //        ];
+        //
+        //        $data = $db->column('SELECT name FROM users WHERE id = :id', $params);
+        //        shoow($data);
 
         $result = $this->model->getNews();
         $vars = [
-            'news' => $result
+            "news" => $result,
         ];
-        $this->view->render('Главная', $vars);
+        $this->view->render("Главная", $vars);
     }
-
 }

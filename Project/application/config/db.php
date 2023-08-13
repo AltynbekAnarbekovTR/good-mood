@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'host' => 'localhost',
-    'name' => 'good-mood',
-    'user' => 'root',
-    'password' => '',
+    "host" => "localhost",
+    "name" => "good-mood",
+    "user" => "root",
+    "password" => "",
 ];
