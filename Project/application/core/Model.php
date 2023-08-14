@@ -4,11 +4,12 @@ namespace application\core;
 
 use application\lib\Db;
 
-abstract class Model {
-
+abstract class Model
+{
     public $db;
 
-    public function __construct() {
-        $this->db = new Db;
+    public function __construct()
+    {
+        $this->db = new Db();
     }
 }

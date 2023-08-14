@@ -1,3 +1,6 @@
 .idea
 .git
 tmp.txt
+node_modules
+git/hooks
+Backups
