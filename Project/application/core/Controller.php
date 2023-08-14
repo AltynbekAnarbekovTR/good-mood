@@ -15,7 +15,7 @@ abstract class Controller
     public function __construct($route)
     {
         $this->route = $route;
-        $_SESSION["admin"] = 1;
+        //        $_SESSION["admin"] = 1;
         $this->view = new View($route);
         $this->model = $this->loadModel($route["controller"]);
         if (!$this->checkAcl()) {

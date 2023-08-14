@@ -3,23 +3,37 @@
 namespace application\controllers;
 
 use application\core\Controller;
-//use application\lib\Db;
 
 class MainController extends Controller
 {
     public function indexAction()
     {
-        //        $params = [
-        //            'id' => 2,
-        //        ];
-        //
-        //        $data = $db->column('SELECT name FROM users WHERE id = :id', $params);
-        //        shoow($data);
+        $this->view->render("Главная страница");
+    }
 
-        $result = $this->model->getNews();
-        $vars = [
-            "news" => $result,
-        ];
-        $this->view->render("Главная", $vars);
+    public function aboutAction()
+    {
+        $this->view->render("Обо мне");
+    }
+
+    public function contactAction()
+    {
+        if (!empty($_POST)) {
+            if (!$this->model->contactValidate($_POST)) {
+                $this->view->message("error", $this->model->error);
+            }
+            mail(
+                "altyn_312@mail.ru",
+                "Сообщение из сайта",
+                $_POST["email"] . "|" . $_POST["text"]
+            );
+            $this->view->message("success", "form works");
+        }
+        $this->view->render("Контакты");
+    }
+
+    public function postAction()
+    {
+        $this->view->render("Пост", $vars);
     }
 }
