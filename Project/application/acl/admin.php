@@ -1,14 +1,12 @@
 <?php
 
 return [
-    "all" => ["index", "about", "contact", "post"],
+    "all" => ["login"],
     "authorize" => [
         //
     ],
     "guest" => [
         //
     ],
-    "admin" => [
-        //
-    ],
+    "admin" => ["posts", "logout", "add", "edit", "delete"],
 ];
